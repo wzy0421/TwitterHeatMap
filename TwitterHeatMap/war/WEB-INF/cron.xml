@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+  <cron>
+    <url>/TwitterHeatMap?op=gettweet</url>
+    <description></description>
+    <schedule>every 20 minutes</schedule>
+  </cron>
+    <cron>
+    <url>/TwitterHeatMap?op=update</url>
+    <description></description>
+    <schedule>every 8 hours</schedule>
+  </cron>
+</cronentries>
