@@ -94,7 +94,27 @@ public class TwitterStreamListener{
 		syncCache.put("worddict",word_count_dict);
 		
 	}
-	public List<GeoPosition> KeywordQuery(String keyword){
+//	public List<GeoPosition> KeywordQuery(String keyword){
+//		List<GeoPosition> result;
+//		try{
+//			result= (List<GeoPosition>) syncCache.get(keyword);
+//		}
+//		catch(Exception e){
+//			result=new LinkedList<GeoPosition>();
+//			Query query = new Query("Tweets");
+//			PreparedQuery pq = datastore.prepare(query);
+//			for (Entity result1 : pq.asIterable()) {
+//				String[] keywords=getKeywords((String)result1.getProperty("Text"));
+//				for (String keyword1:keywords){
+//					if (keyword1.equals(keyword)){
+//						result.add(new GeoPosition((double)result1.getProperty("Latitude"),(double)result1.getProperty("Longitude"),(String)result1.getProperty("CreateAt")));
+//						break;
+//					}
+//				}
+//			}
+//			syncCache.put(keyword,result);
+//		}
+	public String KeywordQuery(String keyword){
 		List<GeoPosition> result;
 		try{
 			result= (List<GeoPosition>) syncCache.get(keyword);
@@ -115,7 +135,7 @@ public class TwitterStreamListener{
 			syncCache.put(keyword,result);
 		}
 		
-		return result;
+		return result.toString();
 		
 	}
 	public void getTweets(HttpServletResponse resp) throws IOException{

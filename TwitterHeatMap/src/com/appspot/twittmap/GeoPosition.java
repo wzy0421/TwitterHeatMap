@@ -9,4 +9,8 @@ public class GeoPosition{
 	double x;
 	double y;
 	String time;
+	public String toString(){
+		return "["+this.x+","+this.y+",\""+this.time+"\"]";
+		
+	}
 }

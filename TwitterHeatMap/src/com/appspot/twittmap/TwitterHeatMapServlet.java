@@ -8,6 +8,7 @@ public class TwitterHeatMapServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		String op=req.getParameter("op");
+		String keyword=req.getParameter("keyword");
 		resp.getWriter().println(op);
 		TwitterStreamListener listener=new TwitterStreamListener();
 		resp.setContentType("text/plain");
@@ -17,6 +18,14 @@ public class TwitterHeatMapServlet extends HttpServlet {
 		}
 		else if (op.equals("update")){
 			listener.update_wordcount();
+		}
+		else if (op.equals("getkeyword")){
+			if (keyword==null){
+				
+			}
+			else{
+				listener.KeywordQuery(keyword);
+			}
 		}
 		
 	}
